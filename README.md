@@ -2,6 +2,8 @@
 
 # In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22995607.svg)](https://doi.org/10.5281/zenodo.22995607)
+
 ## 🔬 Project Overview
 This project presents a computational molecular medicine framework to combat acquired drug resistance in non-small cell lung cancer (NSCLC). The clinical efficacy of first-generation tyrosine kinase inhibitors is frequently halted by the **EGFR T790M "gatekeeper" mutation**, which alters the steric landscape of the kinase active pocket and increases structural affinity for endogenous ATP.
 
@@ -90,3 +92,13 @@ Ultimately, this project highlights the power of combining structural bioinforma
 * `osimertinib.sdf` — 3D molecular structures for Osimertinib synthetic control.
 * `egcg_docking.png` / `osimertinib_docking.png` / `curcumin_docking.png` — Structural docking conformations.
 * `egcg_adme.png` / `osimertinib_adme.png` / `curcumin_adme.png` — SwissADME pharmacokinetic parameters.
+
+@dataset{egfr_t790m_screening_2026,
+  author       = {Krishna Kumar R},
+  title        = {In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology},
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.22995607},
+  url          = {[https://doi.org/10.5281/zenodo.22995607](https://doi.org/10.5281/zenodo.22995607)}
+}
