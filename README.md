@@ -1,8 +1,16 @@
 # EGFR-T790M-In-Silico-Screening
 
-# In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology
+# 🔬 In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22995607.svg)](https://doi.org/10.5281/zenodo.22995607)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Target: EGFR T790M](https://img.shields.io/badge/Target-EGFR_T790M_(3W2O)-blue.svg)](https://www.rcsb.org/structure/3W2O)
+[![Docking: CB--Dock2](https://img.shields.io/badge/Docking_Engine-CB--Dock2-red.svg)](https://cbdock2.labshare.cn/)
+[![ADME: SwissADME](https://img.shields.io/badge/ADME_Server-SwissADME-green.svg)](http://www.swissadme.ch/)
+
+**Author:** Krishna Kumar R  
+**Dataset DOI:** [10.5281/zenodo.22995607](https://doi.org/10.5281/zenodo.22995607)  
+**Publication Year:** 2026
 
 ## 🔬 Project Overview
 This project presents a computational molecular medicine framework to combat acquired drug resistance in non-small cell lung cancer (NSCLC). The clinical efficacy of first-generation tyrosine kinase inhibitors is frequently halted by the **EGFR T790M "gatekeeper" mutation**, which alters the steric landscape of the kinase active pocket and increases structural affinity for endogenous ATP.
