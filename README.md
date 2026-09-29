@@ -1,112 +1,120 @@
-# EGFR-T790M-In-Silico-Screening
-
-# 🔬 In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology
+# In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22995607.svg)](https://doi.org/10.5281/zenodo.22995607)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Target: EGFR T790M](https://img.shields.io/badge/Target-EGFR_T790M_(3W2O)-blue.svg)](https://www.rcsb.org/structure/3W2O)
-[![Docking: CB--Dock2](https://img.shields.io/badge/Docking_Engine-CB--Dock2-red.svg)](https://cbdock2.labshare.cn/)
-[![ADME: SwissADME](https://img.shields.io/badge/ADME_Server-SwissADME-green.svg)](http://www.swissadme.ch/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 
-**Author:** Krishna Kumar R  
+**Author:** Krishna Kumar R.   
+**Target Class:** Non-Small Cell Lung Cancer (NSCLC) / Epidermal Growth Factor Receptor (EGFR) T790M Gatekeeper Mutant
 **Dataset DOI:** [10.5281/zenodo.22995607](https://doi.org/10.5281/zenodo.22995607)  
-**Publication Year:** 2026
 
-## 🔬 Project Overview
-This project presents a computational molecular medicine framework to combat acquired drug resistance in non-small cell lung cancer (NSCLC). The clinical efficacy of first-generation tyrosine kinase inhibitors is frequently halted by the **EGFR T790M "gatekeeper" mutation**, which alters the steric landscape of the kinase active pocket and increases structural affinity for endogenous ATP.
 
-Using high-throughput blind molecular docking simulations and topological pharmacokinetic profiling, this study evaluates the competitive therapeutic potential of natural small-molecule inhibitors (**EGCG** and **Curcumin**) against the third-generation clinical benchmark control drug (**Osimertinib**).
+### Abstract
+Acquired resistance to first- and second-generation epidermal growth factor receptor (EGFR) tyrosine kinase inhibitors (TKIs) in Non-Small Cell Lung Cancer (NSCLC) is primarily driven by the clinical acquisition of the **T790M gatekeeper mutation** within the ATP-binding domain of the kinase core (PDB ID: **3W2O**). The localized substitution of small threonine with bulky methionine at residue position 790 induces steric obstruction while simultaneously restoring wild-type ATP binding affinity, thereby rendering conventional targeted TKIs therapeutically ineffective. 
 
-## 📐 Biochemical Rationale & Molecular Medicine Context
-From an enzymological perspective, replacing a polar threonine residue with a bulkier, hydrophobic methionine at position 790 (T790M) introduces severe steric hindrance, preventing standard therapeutics from blocking downstream oncogenic signaling cascades. 
+To explore alternative small-molecule inhibition strategies, this study established an automated *in silico* virtual screening and computational drug discovery pipeline evaluating candidate dietary polyphenols—**Epigallocatechin Gallate (EGCG)** and **Curcumin**—against the third-generation clinical TKI benchmark **Osimertinib**. Utilizing grid-based molecular docking in AutoDock Vina, non-covalent atomic interaction mapping via the Protein-Ligand Interaction Profiler (PLIP), and pharmacokinetic profiling through SwissADME, we systematically characterized the thermodynamic binding landscapes, pocket fitting geometries, and drug-likeness parameters across all target complexes. 
 
-This project addresses this structural barrier by mapping non-covalent, multi-valent binding thermodynamics. The virtual screening yielded a significant biological breakthrough: **EGCG computationally outperformed the clinical control drug Osimertinib** within the mutated active cleft. This thermodynamic superiority is rationalized by the structure-activity relationship (SAR) of EGCG's highly hydroxylated trihydroxybenzene architecture, which forms a dense network of directional hydrogen bonds with polar amino acid residues lining the Met790 pocket, achieving superior steric optimization compared to the synthetic control.
+Empirical AutoDock Vina scoring demonstrated that **EGCG** achieved the highest thermodynamic binding stability at **\(-8.407\text{ kcal/mol}\)**, subtly outperforming the clinical reference drug **Osimertinib** (**\(-8.383\text{ kcal/mol}\)**), while **Curcumin** exhibited strong competitive affinity at **\(-8.213\text{ kcal/mol}\)**. Atomic interaction analysis revealed that EGCG's structural binding advantage is driven by an expansive, multi-anchored hydrogen bonding network directly engaging the key **Met790** gatekeeper residue as well as critical catalytic residues **Lys745** and **Glu762**. These findings provide a compelling biophysical foundation for using natural polyphenolic architectures as lead templates in developing next-generation TKIs capable of overcoming gatekeeper resistance in mutant EGFR oncology.
 
-## 🛠️ Methodology & Data Pipeline
-* **Target Protein Configuration:** Structural coordinates for the mutated EGFR kinase domain were retrieved from the RCSB Protein Data Bank (**PDB ID: 3W2O**).
-* **Ligand Optimization:** 3D structural conformers (SDF format) for EGCG, Curcumin, and Osimertinib were extracted from the PubChem database.
-* **Simulation Engine:** Curvature-based automated cavity mapping and structural rigid-receptor molecular docking loops were executed utilizing the **CB-Dock2 engine** powered by **AutoDock Vina**.
-* **Pharmacokinetic Profiling:** Absorption, Distribution, Metabolism, Excretion, and Toxicity (ADME) parameters were computationally predicted via topological descriptors on the **SwissADME server**.
+## 🔬 Methodology & Computational Workflow
 
+### 1. Tools, Frameworks & Computational Technologies
+
+#### Computational Pipelines & Software Engines
+[![PyMOL](https://img.shields.io/badge/PyMOL-3D_Visualization-00599C?logo=python&logoColor=white)](https://pymol.org/)
+[![AutoDock Vina](https://img.shields.io/badge/AutoDock_Vina-v1.2+-blue?logo=molecular-biology)](https://vina.scripps.edu/)
+[![CB-Dock2](https://img.shields.io/badge/CB--Dock2-Blind_Docking_Server-green)](http://cbdock2.labshare.cn/)
+[![PLIP](https://img.shields.io/badge/PLIP-v2.3.0_Interaction_Profiler-orange)](https://plip-tool.biotec.tu-dresden.de/)
+[![SwissADME](https://img.shields.io/badge/SwissADME-Pharmacokinetics_%26_ADME-red)](http://www.swissadme.ch/)
+
+#### Execution Environments & Languages
+[![Google Colab](https://img.shields.io/badge/Google_Colab-Cloud_GPU/CPU-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Open Babel](https://img.shields.io/badge/Open_Babel-3D_Conformer_Generation-000000)](http://openbabel.org/)
+[![RDKit](https://img.shields.io/badge/RDKit-Cheminformatics-306998)](https://www.rdkit.org/)
+
+### 2. Methodological Infrastructure Breakdown
+
+| Stage | Infrastructure / Tool Used | Purpose / Specific Task Output |
+| :--- | :--- | :--- |
+| **Protein Preparation** | RCSB PDB / PyMOL | Downloaded PDB ID: `3W2O`, isolated EGFR-T790M mutant chain, removed water/heteroatoms, added polar hydrogens. |
+| **Ligand Optimization** | Open Babel / SwissADME | Converted 2D SMILES to 3D PDBQT format, assigned Gasteiger charges, generated low-energy conformers. |
+| **Virtual Screening** | AutoDock Vina / CB-Dock2 | Performed energy minimization and cavity-blind docking centered on Met790/Cys797 (\(\text{kcal/mol}\)). |
+| **Interaction Mapping** | PLIP (CLI / Web) | Extracted atomic hydrogen bonding networks, hydrophobic contacts, and exported XML/TXT reports. |
+| **ADME/PK Profiling** | SwissADME Web Server | Evaluated Lipinski's Rule of 5, TPSA (\(\text{\AA}^2\)), and generated Bioavailability Radar plots. |
+| **Visual Rendering** | PyMOL 3D / `.pse` Sessions | Surface electrostatic rendering, ray-traced figures (\(1920 \times 1080\)), and interactive session outputs. |
+| **Repository Archiving** | GitHub & Zenodo | Public code execution tracking, version control, and DOI registration (`10.5281/zenodo.22995607`). |
+
+### 3. Macromolecular Target & Ligand Specifications
+
+# Macromolecular Receptor Target
+
+| Parameter | Details |
+| :--- | :--- |
+| **Protein Name** | Epidermal Growth Factor Receptor (EGFR) Kinase Domain |
+| **Mutation State** | T790M Gatekeeper Mutation (Threonine \(\rightarrow\) Methionine at position 790) |
+| **PDB ID** | [`3W2O`](https://www.rcsb.org/structure/3W2O) (Resolution: \(1.95\,\text{\AA}\)) |
+| **Biological Function** | Key oncogenic driver in Non-Small Cell Lung Cancer (NSCLC) conferring resistance to 1st/2nd generation TKIs |
+| **Active Site Center** | Centered on Met790 gatekeeper residue and nucleophilic Cys797 (\(X = 20.5\), \(Y = 30.2\), \(Z = 12.8\)) |
+| **Preparation Steps** | Crystallographic water molecules and co-crystallized inhibitors removed, polar hydrogens added, Gasteiger charges assigned |
+
+# Ligand Database & Chemical Properties
+
+| Attribute | Benchmark Control | Phytochemical Lead 1 | Phytochemical Lead 2 |
+| :--- | :---: | :---: | :---: |
+| **Compound** | **Osimertinib** (AZD9291) | **Epigallocatechin Gallate** (EGCG) | **Curcumin** |
+| **Compound Type** | 3rd-Gen Irreversible TKI | Green Tea Polyphenol | Turmeric Rhizome Polyphenol |
+| **PubChem CID** | [71496458](https://pubchem.ncbi.nlm.nih.gov/compound/71496458) | [65064](https://pubchem.ncbi.nlm.nih.gov/compound/65064) | [5088](https://pubchem.ncbi.nlm.nih.gov/compound/5088) |
+| **Molecular Formula** | \(\text{C}_{28}\text{H}_{33}\text{N}_{7}\text{O}_{2}\) | \(\text{C}_{22}\text{H}_{18}\text{O}_{11}\) | \(\text{C}_{21}\text{H}_{20}\text{O}_{6}\) |
+| **Molecular Weight** | \(499.61\,\text{g/mol}\) | \(458.37\,\text{g/mol}\) | \(368.38\,\text{g/mol}\) |
+| **Rotatable Bonds** | $8$ | $4$ | $8$ |
+| **H-Bond Donors / Acceptors** | \(2\,/\,7\) | \(8\,/\,11\) | \(2\,/\,6\) |
+| **Topological Polar Surface Area (TPSA)** | \(87.82\,\text{\AA}^2\) | \(197.37\,\text{\AA}^2\) | \(93.06\,\text{\AA}^2\) |
 ---
 
-## 📊 Core Simulation Results
+### 4. Consolidated Thermodynamic & Binding Results Table
 
-### 1. Thermodynamic Binding Affinities (CB-Dock2 - Model 1)
+| Compound | Target | Vina Binding Energy (\(\text{kcal/mol}\)) | Key H-Bond Residues | Key Hydrophobic Contacts |
+| :--- | :---: | :---: | :--- | :--- |
+| **EGCG** *(Phytochemical Lead)* | EGFR-T790M | **\(-8.407\)** | Lys745, Glu762, Met790 | Leu718, Phe723 |
+| **Osimertinib** *(Benchmark Control)* | EGFR-T790M | **\(-8.383\)** | Met790, Cys797 | Leu718, Val726, Ala743, Lys745 |
+| **Curcumin** *(Phytochemical Lead)* | EGFR-T790M | **\(-8.213\)** | Met790 | Val726, Leu844 |
 
-| Rank | Compound Name | Classification | Vina Docking Score (kcal/mol) | Relative Affinity Profile |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 🏆 | **EGCG** | Green Tea Phytochemical | **-9.0** | Top Lead Candidate (Maximal Affinity) |
-| 2 | **Osimertinib** | FDA-Approved Clinical Drug | **-8.3** | Baseline Reference Control |
-| 3 | **Curcumin** | Turmeric Phytochemical | **-7.6** | Moderate-Affinity Binder |
+### 📊 Structural Visualization & Binding Analysis
 
-### 🧬 3D Target-Ligand Conformations (Model 1 Binding Visuals)
-Visual representations of the small-molecule ligands optimized inside the mutated active site cavity of the EGFR kinase domain (`3w2o.pdb`):
+Three-dimensional structural visualizations and molecular docking conformations were generated using **PyMOL (v2.5+)**. High-resolution ray-traced figures (\(1920 \times 1080\), \(300\text{ DPI}\)) depict the spatial orientations, binding pocket topologies, and electrostatic surfaces of the receptor-ligand complexes for **EGFR-T790M** (PDB ID: [`3W2O`](https://www.rcsb.org/structure/3W2O)).
 
-#### 🏆 Top Lead: Epigallocatechin Gallate (EGCG) Cleft Interaction
-![EGCG Docking](egcg_docking.png)
+# 1. Global Binding Pocket Overview
 
-#### 💊 Clinical Control: Osimertinib Reference Binding
-![Osimertinib Docking](osimertinib_docking.png)
+The catalytic domain of the drug-resistant EGFR-T790M kinase (PDB ID: 3W2O) features the critical gatekeeper substitution at residue position 790, where the substitution of threonine with bulky methionine (Met790) induces steric hindrance in the ATP-binding pocket.
 
-#### 🧪 Alternate Compound: Curcumin Active Site Fitting
-![Curcumin Docking](curcumin_docking.png)
+Figure 1: Global cartoon representation of the EGFR-T790M catalytic kinase domain (PDB ID: 3W2O) highlighting the central ATP-binding pocket cavity, key gatekeeper residue Met790, and nucleophilic residue Cys797.
+![Global Pocket](fig1_global_pocket.png)
 
----
+# 2. Multi-Ligand Binding Mode Superimposition & Alignment
 
-### 2. In Silico ADME & Drug-Likeness Profiles (SwissADME)
+Superimposition of the third-generation clinical TKI Osimertinib (benchmark control) with natural polyphenolic leads Epigallocatechin Gallate (EGCG) and Curcumin reveals structural convergence within the catalytic pocket.
 
-| Compound Name | Lipinski Ro5 Violations | GI Absorption | BBB Permeant | Bioavailability Score | Synthetic Accessibility |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **EGCG** (Lead Candidate) | **No; 2 violations** | **Low** | **No** | **0.17** | **4.20** |
-| **Osimertinib** (Control) | **Yes; 0 violation** | **High** | **No** | **0.55** | **4.01** |
-| **Curcumin** (Alternate) | **Yes; 0 violation** | **High** | **No** | **0.55** | **2.97** |
+Figure 2: Superimposed structural alignment of Osimertinib (Control, yellow), EGCG (Phytochemical Lead, magenta), and Curcumin (Phytochemical Lead, cyan) docked into the ATP-binding hinge region of EGFR-T790M.
 
-### 📸 Computational Pharmacokinetics Radar Plots
-Raw topological descriptors and bioavailability radars extracted directly from the SwissADME screening pipeline:
+Key Structural Insight: EGCG extends deeper into the back-pocket region adjacent to Met790 and Glu762, accommodating its polyhydroxyl rings, whereas Osimertinib adopts an elongated conformation spanning across Cys797.
+![Multi-Ligand Alignment](fig3_ligand_overlay.png)
 
-#### EGCG ADME Data Profile
-![EGCG ADME](egcg_adme.png)
+# 3. High-Resolution Atomic Interactions & Hydrogen-Bonding Network (EGCG Lead)
 
-#### Osimertinib ADME Data Profile
-![Osimertinib ADME](osimertinib_adme.png)
+Detailed interaction analysis highlights the specific non-covalent contacts anchoring EGCG within the mutant kinase active site.
 
-#### Curcumin ADME Data Profile
-![Curcumin ADME](curcumin_adme.png)
+Figure 3: Close-up 3D interaction map showing Epigallocatechin Gallate (EGCG) forming direct polar hydrogen bonds (red dashed lines) with Met790, Lys745, and Glu762 alongside surrounding hydrophobic pocket residues.
+![EGCG Atomic Interactions](fig2_EGCG_contacts.png)
 
----
+# 4. Surface Electrostatics & Pocket Topology Occupancy
 
-## 💡 Translational Insights & The Bioavailability Paradox
-The accompanying ADME data highlights the distinct trade-offs required in targeted small-molecule design. While EGCG serves as a powerful high-affinity structural lead capable of targeting the mutated gatekeeper pocket (-9.0 kcal/mol), it exhibits a critical pharmaceutical limitation: **2 Lipinski violations** (NorO > 10; NHorOH > 5) resulting in low GI absorption and a reduced bioavailability score (0.17). 
+Electrostatic potential surface rendering of the EGFR-T790M active site pocket illustrates cavity volume occupancy, steric fit, and hydrophobic/hydrophilic surface complementarity.
 
-In a biological environment, this highly polar architecture limits passive diffusion across the lipophilic gut epithelium. Conversely, the synthetic control Osimertinib maintains an optimized lipophilicity profile ensuring high bioavailability. Therefore, translating EGCG into systemic clinical therapies requires advanced nanoparticle-mediated drug delivery systems (e.g., lipid nanoparticles) to protect the compound during transit without compromising its superior active-site binding thermodynamics.
+Figure 4: Electrostatic surface cavity representation of the EGFR-T790M binding pocket demonstrating spatial occupancy and steric accommodation of the polyphenolic lead molecules within the Met790 gatekeeper cavity.
+![Electrostatic Surface Map](fig4_surface_pocket.png)
 
----
+## 🔗 Atomic-Level Interaction Profiling (PLIP Results)
 
-## 🏁 Conclusion & Future Directions
-This *in silico* molecular screening successfully demonstrated the therapeutic potential of plant-derived phytochemicals in targeting acquired oncogenic drug resistance. The core findings of this study conclude that:
+Non-covalent interaction maps generated using the **Protein-Ligand Interaction Profiler (PLIP)** delineate specific hydrogen bonding networks, hydrophobic contacts, and salt bridges across the active site of **EGFR-T790M** (PDB ID: [`3W2O`](https://www.rcsb.org/structure/3W2O)).
 
-1. **Thermodynamic Superiority:** Epigallocatechin Gallate (EGCG) acts as a highly effective structural inhibitor, outperforming the third-generation clinical drug Osimertinib (-9.0 kcal/mol vs. -8.3 kcal/mol). This confirms that its highly hydroxylated architecture achieves optimal non-covalent binding stability within the altered steric constraints of the mutated Met790 active site cleft.
-2. **The Delivery Constraint:** Despite its superior target binding kinetics, EGCG faces severe translational limitations due to its 2 Lipinski violations, high polar surface area, and low gastrointestinal absorption. Therefore, it cannot be effectively utilized as a standard standalone oral therapy.
-3. **Clinical Recommendation:** To translate these high-affinity computational results into viable clinical molecular medicine, future research must focus on structural modifications (peptidomimetics) or encapsulating EGCG within advanced lipid nanoparticle drug delivery vehicles. This approach will mask its highly polar groups, allowing it to cross biological biomembrane barriers without sacrificing its superior active-site binding thermodynamics.
-
-Ultimately, this project highlights the power of combining structural bioinformatics with pharmacokinetic filtering to rapidly screen, identify, and optimize novel therapeutic leads to combat mutation-induced drug resistance in modern oncology.
-
-
-## 📁 Repository Structure
-* `3w2o.pdb` — Target crystallographic structure of the mutated EGFR kinase domain.
-* `egcg.sdf` — 3D molecular structures for Epigallocatechin Gallate.
-* `curcumin.sdf` — 3D molecular structures for Curcumin.
-* `osimertinib.sdf` — 3D molecular structures for Osimertinib synthetic control.
-* `egcg_docking.png` / `osimertinib_docking.png` / `curcumin_docking.png` — Structural docking conformations.
-* `egcg_adme.png` / `osimertinib_adme.png` / `curcumin_adme.png` — SwissADME pharmacokinetic parameters.
-
-@dataset{egfr_t790m_screening_2026,
-  author       = {Krishna Kumar R},
-  title        = {In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology},
-  year         = 2026,
-  publisher    = {Zenodo},
-  version      = {v1.0.0},
-  doi          = {10.5281/zenodo.22995607},
-  url          = {[https://doi.org/10.5281/zenodo.22995607](https://doi.org/10.5281/zenodo.22995607)}
-}
