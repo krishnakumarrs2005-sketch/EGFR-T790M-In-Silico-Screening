@@ -1,14 +1,11 @@
 # In Silico Virtual Screening of Phytochemicals Against Drug-Resistant EGFR (T790M) in Molecular Oncology
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22995607.svg)](https://doi.org/10.5281/zenodo.22995607)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 
 **Author:** Krishna Kumar R.   
 **Target Class:** Non-Small Cell Lung Cancer (NSCLC) / Epidermal Growth Factor Receptor (EGFR) T790M Gatekeeper Mutant
-**Dataset DOI:** [10.5281/zenodo.22995607](https://doi.org/10.5281/zenodo.22995607)  
-
-
+ 
 ### Abstract
 Acquired resistance to first- and second-generation epidermal growth factor receptor (EGFR) tyrosine kinase inhibitors (TKIs) in Non-Small Cell Lung Cancer (NSCLC) is primarily driven by the clinical acquisition of the **T790M gatekeeper mutation** within the ATP-binding domain of the kinase core (PDB ID: **3W2O**). The localized substitution of small threonine with bulky methionine at residue position 790 induces steric obstruction while simultaneously restoring wild-type ATP binding affinity, thereby rendering conventional targeted TKIs therapeutically ineffective. 
 
@@ -43,7 +40,7 @@ Empirical AutoDock Vina scoring demonstrated that **EGCG** achieved the highest 
 | **Interaction Mapping** | PLIP (CLI / Web) | Extracted atomic hydrogen bonding networks, hydrophobic contacts, and exported XML/TXT reports. |
 | **ADME/PK Profiling** | SwissADME Web Server | Evaluated Lipinski's Rule of 5, TPSA (\(\text{\AA}^2\)), and generated Bioavailability Radar plots. |
 | **Visual Rendering** | PyMOL 3D / `.pse` Sessions | Surface electrostatic rendering, ray-traced figures (\(1920 \times 1080\)), and interactive session outputs. |
-| **Repository Archiving** | GitHub & Zenodo | Public code execution tracking, version control, and DOI registration (`10.5281/zenodo.22995607`). |
+| **Repository Archiving** | GitHub | Public code execution tracking, version control.
 
 ### 3. Macromolecular Target & Ligand Specifications
 
@@ -377,6 +374,4 @@ If you use this dataset, computational workflow, or docking results in your rese
                    Drug-Resistant EGFR (T790M) in Molecular Oncology}},
   month        = sep,
   year         = 2026,
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.22995607},
-  url          = {[https://doi.org/10.5281/zenodo.22995607](https://doi.org/10.5281/zenodo.22995607)}
+  
