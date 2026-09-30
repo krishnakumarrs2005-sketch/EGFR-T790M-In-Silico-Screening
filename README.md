@@ -116,5 +116,75 @@ Figure 4: Electrostatic surface cavity representation of the EGFR-T790M binding 
 
 ## 🔗 Atomic-Level Interaction Profiling (PLIP Results)
 
-Non-covalent interaction maps generated using the **Protein-Ligand Interaction Profiler (PLIP)** delineate specific hydrogen bonding networks, hydrophobic contacts, and salt bridges across the active site of **EGFR-T790M** (PDB ID: [`3W2O`](https://www.rcsb.org/structure/3W2O)).
+Non-covalent interaction mapping was conducted using the **Protein-Ligand Interaction Profiler (PLIP)** to characterize the specific hydrogen-bonding networks, hydrophobic contacts, and electrostatic stabilization mechanisms within the ATP-binding site of **EGFR-T790M** (PDB ID: [`3W2O`](https://www.rcsb.org/structure/3W2O)).
 
+## 🧬 High-Resolution Interaction Profiling & Raw Reports
+
+# 1. Benchmark Control: Osimertinib (AZD9291)
+
+Vina Binding Affinity: −8.383 kcal/mol
+
+Key Hydrogen Bonds: Met790, Cys797
+
+Hydrophobic Contacts: Leu718, Val726, Ala743, Lys745
+
+Raw Files:[`View TXT Report`](/Osimertinib_report.txt) | [`Download XML Data`](Osimertinib_plip.xml)
+
+Structural & Biological Explanation:
+
+Osimertinib functions as a third-generation irreversible TKI designed specifically to overcome gatekeeper T790M resistance. PLIP interaction mapping reveals dual-anchoring polar interactions across the hinge region:
+
+Hinge Region Engagement: Forms crucial hydrogen-bonding contacts with the backbone of Met790 and the thiol-containing residue Cys797. The interaction at Cys797 positions Osimertinib in optimal spatial proximity for targeted covalent bond formation in vivo.
+
+Hydrophobic Pocket Fitting: The lipophilic indole and pyrimidine core fragments are stabilized by non-polar alkyl/pi-alkyl contacts with Leu718, Val726, and Ala743, providing strong steric complementation inside the hydrophobic cleft.
+![Osimertinib Interactions](Osimertinib_interaction.png)
+
+# 2. Phytochemical Lead 1: Epigallocatechin Gallate (EGCG)
+
+Vina Binding Affinity: −8.407 kcal/mol (Highest Thermodynamic Stability)
+
+Key Hydrogen Bonds: Lys745, Glu762, Met790
+
+Hydrophobic Contacts: Leu718, Phe723
+
+Raw Files: [`View TXT Report`](EGCG_report.txt) | [`Download XML Data`](EGCG_plip.xml)
+
+Structural & Biological Explanation:
+
+Epigallocatechin Gallate (EGCG), a major green tea catechin, demonstrated the highest binding stability among all tested compounds, subtly outperforming Osimertinib. PLIP profiling reveals a multi-anchored hydrogen-bonding network:
+
+Tripartite Catalytic Anchor: EGCG utilizes its multiple hydroxyl (−OH) functional groups on the B-ring and gallate moiety to establish simultaneous polar contacts with Met790 (gatekeeper residue), Lys745 (catalytic lysine), and Glu762 (αC-helix residue).
+
+Salt-Bridge Disruption: By directly engaging both Lys745 and Glu762, EGCG perturbs the active-state salt bridge necessary for phosphotransfer, functionally locking the kinase domain in an inactive conformation.
+
+Aromatic Stabilization: Hydrophobic interactions with Leu718 and Phe723 wrap around the polyphenolic chromane ring, stabilizing its spatial pose within the pocket.
+![EGCG Interactions](EGCG_interaction.png)
+
+# 3. Phytochemical Lead 2: Curcumin
+
+Vina Binding Affinity: −8.213 kcal/mol
+
+Key Hydrogen Bonds: Met790
+
+Hydrophobic Contacts: Val726, Leu844
+
+Raw Files:[`View TXT Report`](Curcumin_report.txt) | [`Download XML Data`](Curcumin_plip.xml)
+
+Structural & Biological Explanation:
+
+Curcumin, a natural diferuloylmethane polyphenol from Curcuma longa, demonstrates competitive thermodynamic binding to the resistant target.
+
+Gatekeeper Targeting: Forms a direct hydrogen bond via its terminal phenolic hydroxyl group with the mutated gatekeeper residue Met790, confirming targeted entry into the steric-hindrance region.
+
+Linear Hydrophobic Channel Fit: The flexible, conjugated heptadienone chain allows Curcumin to extend along the hydrophobic binding cleft, establishing strong non-covalent hydrophobic contacts with Val726 and Leu844.
+
+Binding Limitation: While highly stable, Curcumin lacks the multi-dentate hydroxyl array of EGCG, resulting in fewer polar anchors and a slightly lower overall affinity score than EGCG and Osimertinib.
+![Curcumin Interactions](Curcumin_interaction.png)
+
+## 💡 Key Interaction Observations
+
+Gatekeeper Targeting (Met790): All three test molecules successfully form target hydrogen-bonding interactions with the mutated gatekeeper residue Met790, confirming catalytic pocket localization despite steric hindrance.
+
+Anchor Residue Engagement (EGCG): EGCG establishes additional polar contacts with catalytic site residues Lys745 and Glu762, explaining its superior thermodynamic binding affinity.
+
+Covalency/H-Bonding Shift (Osimertinib): Osimertinib exhibits dual polar anchoring to Met790 and key hinge residue Cys797, supplemented by an extensive hydrophobic contact network across Leu718 and Val726.
